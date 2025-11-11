@@ -1,6 +1,7 @@
 $cell: 100px;
 $columns: 7;
 $gap: 1px;
+$padding: 10px;
 $days-week: (
   'mon': 0,
   'tue': 1,
@@ -10,12 +11,15 @@ $days-week: (
   'sat': 5,
   'sun': 6,
 );
+$color-bg: #eee;
+$color-border: black;
 
 body {
   margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
 }
 
 .calendar {
@@ -23,15 +27,15 @@ body {
   flex-wrap: wrap;
   gap: $gap;
   max-width: calc($columns * $cell + ($columns - 1) * $gap);
-  padding: 10px;
+  padding: $padding;
 
   &__day {
     cursor: pointer;
-    background-color: #eee;
+    background-color: $color-bg;
     height: $cell;
     width: $cell;
     box-sizing: border-box;
-    border: 1px solid black;
+    border: 1px solid $color-border;
 
     display: flex;
     align-items: center;
